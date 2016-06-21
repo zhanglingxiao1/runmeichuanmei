@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<style>
+.fl{ float: left;}
+.fr{ float: right;}
+.bg-primary{ background-color: rgb(236,67,112);}
+body{ padding-top: 100px;}
+.container{ width:1200px; margin: 0 auto; height: 100%; }
+header{ position: fixed; left:0; top:0; height: 99px; box-shadow:0 2px 3px #999; width: 100%; background-image: url(images/logo_left.png); background-repeat: no-repeat; background-size: 20% 99px; z-index: 10;} 
+.banner{ height: 582px;  box-shadow:0 2px 3px #999; position: relative; z-index: 0;}
+.hot-btn{ height: 230px; background-color: rgb(220,220,220);}
+.main-nav>ul{ margin-top: 35px; background:url(images/header-xuxian.png) left 3px no-repeat;}
+.main-nav>ul>li{ float: left; width: 87px;text-align: center; position: relative; height:50px;}
+
+.main-nav a{ display: block; color: #333;}
+.main-nav>ul>li>a:before{ content: ""; display: block; background:url(images/headeryuan.png) left top no-repeat; height:7px; width:7px; margin-left: auto; margin-right: auto; margin-bottom: 1em;}
+.main-nav>ul>li>a:hover:before,.main-nav>ul>li>.active:before{ background-position: right top;}
+.h-search{ border:1px solid rgb(220,220,220); border-radius: 8px; height: 30px; line-height: 30px; width: 210px; margin-top: 30px; }
+.h-search span{ padding-left: 0.5em; padding-right: 0.0em; border-right:1px solid rgb(220,220,220);}
+.h-search span:after{ content: ""; display: inline-block; width: 0px; height: 0px; border:6px solid transparent; border-left-color:rgb(220,220,220);margin-left: 0.5em;}
+
+.inp-se{ width: 110px; border: none; height: 30px; line-height: 30px;   }
+.inp-se:focus{ outline: none;}
+.se-btn{ border: none; height: 30px; text-indent: -99999em; background-image: url(images/fangdajing.png); background-repeat: no-repeat; background-position: center center; width: 40px; float: right; border-radius: 0 8px 8px 0px;}
+.subnav{ width: 87px; border-radius:0px 0px 8px 8px; padding-bottom: 8px; position: absolute; left:0; top:63px; opacity: 0;   -webkit-transition: all 1s;transition: all 1s ;}
+.subnav:before{ content: ""; display: block; width: 0; height: 0; border:10px solid transparent; border-bottom-color:rgb(236,67,112); position: absolute; top:-20px; left:50%; transform:translate(-50%,0);}
+.subnav a{ display: block; height: 25px; line-height: 25px; color: #fff;}
+.subnav a:hover{ background-color:rgb(166,17,56); }
+.main-nav>ul>li:hover .subnav{  display: block; opacity: 1; }
+
+
+/* 本例子css -------------------------------------- */
+    .slideBox{ position:relative; overflow:hidden; margin:0px auto;  max-width:100%;/* 设置焦点图最大宽度 */ }
+    .slideBox .hd{ position:absolute; height:28px; line-height:28px; bottom:0; right:0; z-index:1; left:0; text-align: center; }
+    .slideBox .hd li{ display:inline-block; width:10px; height:10px; -webkit-border-radius:5px; -moz-border-radius:10px; border-radius:10px; background:#333; text-indent:-9999px; overflow:hidden; margin:0 6px;   }
+    .slideBox .hd li.on{ background:rgb(236,67,112);  }
+    .slideBox .bd{ position:relative; z-index:0; }
+    .slideBox .bd li{ position:relative; text-align:center;  }
+    .slideBox .bd li img{ background:url(images/loading.gif) center center no-repeat;  vertical-align:top; width:100%;/* 图片宽度100%，达到自适应效果 */}
+    .slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0,0,0,0);  }  /* 去掉链接触摸高亮 */
+    .slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:28px; line-height:28px; background:url(images/focusBg.png) repeat-x; color:#fff;  text-align:left;  }
+/* 本例子css -------------------------------------- */
+.hot-btn li{ width: 282px; height: 152px; float: left; margin: 40px 5px; }
+.hot-btn a{ display: block; height: 100%; text-indent: -9999em;}
+.hot1{ background: url(images/1-1511061I522596.jpg);}
+.hot1:hover{ background: url(images/big1.png);}
+.hot2{ background: url(images/1-1511061I44a26.jpg);}
+.hot2:hover{ background: url(images/big2.png);}
+.hot3{ background: url(images/1-1511061I53V13.jpg);}
+.hot3:hover{ background: url(images/big3.png);}
+.hot4{ background: url(images/1-1511061I5051O.jpg);}
+.hot4:hover{ background: url(images/big4.png);}
+
+</style>
+<script src="js/TouchSlide.1.1.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+        <h1 class="logo fl"><a href=""><img src="images/runmei.png" alt=""></a></h1>
+        <nav class="main-nav fl">
+            <ul class="clearfix">
+                <li><a href="" class="active">item1</a></li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a>
+                        <ul class="subnav bg-primary">
+                            <li><a href="">sub1</a></li>
+                            <li><a href="">sub2</a></li>
+                            <li><a href="">sub3</a></li>
+                            <li><a href="">sub4</a></li>
+                            <li><a href="">sub5</a></li>
+                        </ul>
+                </li>
+                <li><a href="">item4</a>
+                        <ul class="subnav bg-primary">
+                            <li><a href="">sub1</a></li>
+                            <li><a href="">sub2</a></li>
+                           
+                        </ul>
+                </li>
+                <li><a href="">item5</a>
+                <ul class="subnav bg-primary">
+                            <li><a href="">sub1</a></li>
+                            <li><a href="">sub2</a></li>
+                            <li><a href="">sub3</a></li>
+                           
+                        </ul>
+                </li>
+                <li><a href="">item6</a></li>
+                <li><a href="">item7</a></li>
+            </ul>
+        </nav>
+        <form class="h-search fr"><span>新闻</span><input type="search" class="inp-se"/><input type="submit" value="搜索" class="bg-primary se-btn"></form>
+        </div>
+    </header>
+   
+    <article>
+        <div class="banner">
+            
+<!-- 本例主要代码 Start ================================ -->
+            <div id="slideBox" class="slideBox">
+
+                <div class="bd">
+                    <ul>
+                            <li>
+                                <a class="pic" href="#"><img src="../images/1-151106133501645.jpg" /></a>
+                               
+                            </li>
+                            <li>
+                                <a class="pic" href="#"><img src="images/1-151106112J03L.jpg"/></a>
+                               
+                            </li>
+                            <li>
+                                <a class="pic" href="#"><img src="images/1-1511061129212T.jpg"/></a>
+                               
+                            </li>
+                            <li>
+                                <a class="pic" href="#"><img src="images/1-1511061GGbP.jpg"/></a>
+                                
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="hd">
+                    <ul></ul>
+                </div>
+            </div>
+            <script type="text/javascript">
+                TouchSlide({ 
+                    slideCell:"#slideBox",
+                    titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+                    mainCell:".bd ul", 
+                    effect:"leftLoop", 
+                    autoPage:true,//自动分页
+                    autoPlay:true, //自动播放
+                    interTime:5000//间隔时间
+                });
+            </script>
+            <!-- 本例主要代码 End ================================ -->
+
+        </div>
+        <section class="hot-btn">
+            <div class="container">
+                <ul>
+                    <li><a href="" class="hot1">润美视觉</a></li>
+                    <li><a href="" class="hot2">润美视觉</a></li>
+                    <li><a href="" class="hot3">润美视觉</a></li>
+                    <li><a href="" class="hot4">润美视觉</a></li>
+                </ul>
+
+            </div>
+        </section>
+        <section class="service">
+            <div class="container"></div>
+        </section>
+        <section class="produce">
+            <div class="container"></div>
+        </section>
+        <section class="news">
+            <div class="container"></div>
+        </section>
+        <section class="aboutus">
+            <div class="container"></div>
+        </section>
+        <section class="friend">
+            <div class="container"></div>
+        </section>
+
+    </article>
+    <footer>
+        <div class="container"></div>
+    </footer>
+</body>
+</html>
